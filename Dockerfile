@@ -17,6 +17,8 @@ ENV \
 
 COPY ./ /app/epg
 COPY root/ /
+#make init scripts runnable
+RUN chmod +x /etc/services.d/docker-iptv-or-epg/run /etc/cont-init.d/50-config
 
 RUN mkdir -p /app/epg && \
   echo "**** install build dependencies ****" && \
